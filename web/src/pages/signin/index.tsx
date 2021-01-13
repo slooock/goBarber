@@ -21,7 +21,7 @@ const SignIn: React.FC = () => (
 
           <Input icon={FiLock} name="senha" type="password" placeholder="Senha"/>
 
-          <Button id="Arroz" type="submit">Entrar</Button>
+          <Button type="submit">Entrar</Button>
 
           <a href="forgot">Esqueci minha senha</a>
         </form>
