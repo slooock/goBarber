@@ -38,15 +38,16 @@ const SignIn: React.FC = () => {
       await schema.validate(data, {
         abortEarly: false
       });
-      signIn({
+
+      await signIn({
         email: data.email,
-        password: data.password
+        password: data.password,
       });
-    }catch(err){
-      if(err instanceof Yup.ValidationError){
+      return;
+    } catch (err) {
+      if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
         formRef.current?.setErrors(errors);
-        return;
       }
       addToast({
         type: 'error',
